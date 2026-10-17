@@ -1,0 +1,25 @@
+{
+  "name": "iron-war",
+  "version": "1.0.0",
+  "description": "Iron War",
+  "main": "main.js",
+  "author": "Iron War",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --publish never"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.ironwar.game",
+    "productName": "Iron War",
+    "directories": { "output": "dist" },
+    "files": ["index.html", "main.js", "iron-war.ico"],
+    "extraFiles": [{ "from": "sounds", "to": "sounds" }],
+    "win": { "icon": "iron-war.ico", "target": ["portable", "zip"] },
+    "portable": { "artifactName": "Iron-War.exe" }
+  }
+}
